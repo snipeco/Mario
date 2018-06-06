@@ -1,0 +1,78 @@
+info it worked if it ends with ok
+verbose cli [ 'node',
+verbose cli   '/usr/bin/npm',
+verbose cli   'install',
+verbose cli   '-g',
+verbose cli   'ios-simnpm',
+verbose cli   'install',
+verbose cli   '-g',
+verbose cli   'ios-simnpm',
+verbose cli   'install',
+verbose cli   '-g',
+verbose cli   'ios-simnpm' ]
+info using npm@1.1.4
+info using node@v0.6.12
+verbose config file /home/ram/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/share/npm/npmrc
+verbose cache add [ 'ios-simnpm', null ]
+silly cache add: name, spec, args [ undefined, 'ios-simnpm', [ 'ios-simnpm', null ] ]
+verbose parsed url { pathname: 'ios-simnpm',
+verbose parsed url   path: 'ios-simnpm',
+verbose parsed url   href: 'ios-simnpm' }
+verbose cache add [ 'install', null ]
+silly cache add: name, spec, args [ undefined, 'install', [ 'install', null ] ]
+verbose parsed url { pathname: 'install', path: 'install', href: 'install' }
+verbose cache add [ 'ios-simnpm', null ]
+silly cache add: name, spec, args [ undefined, 'ios-simnpm', [ 'ios-simnpm', null ] ]
+verbose parsed url { pathname: 'ios-simnpm',
+verbose parsed url   path: 'ios-simnpm',
+verbose parsed url   href: 'ios-simnpm' }
+verbose cache add [ 'install', null ]
+silly cache add: name, spec, args [ undefined, 'install', [ 'install', null ] ]
+verbose parsed url { pathname: 'install', path: 'install', href: 'install' }
+verbose cache add [ 'ios-simnpm', null ]
+silly cache add: name, spec, args [ undefined, 'ios-simnpm', [ 'ios-simnpm', null ] ]
+verbose parsed url { pathname: 'ios-simnpm',
+verbose parsed url   path: 'ios-simnpm',
+verbose parsed url   href: 'ios-simnpm' }
+verbose addNamed [ 'ios-simnpm', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'ios-simnpm', '', false ]
+verbose addNamed [ 'install', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'install', '', false ]
+verbose addNamed [ 'ios-simnpm', '' ]
+verbose addNamed [ 'install', '' ]
+verbose addNamed [ 'ios-simnpm', '' ]
+verbose raw, before any munging ios-simnpm
+verbose url resolving [ 'https://registry.npmjs.org/', './ios-simnpm' ]
+verbose url resolved https://registry.npmjs.org/ios-simnpm
+http GET https://registry.npmjs.org/ios-simnpm
+verbose raw, before any munging install
+verbose url resolving [ 'https://registry.npmjs.org/', './install' ]
+verbose url resolved https://registry.npmjs.org/install
+http GET https://registry.npmjs.org/install
+ERR! Error: failed to fetch from registry: ios-simnpm
+ERR!     at /usr/share/npm/lib/utils/npm-registry-client/get.js:139:12
+ERR!     at cb (/usr/share/npm/lib/utils/npm-registry-client/request.js:31:9)
+ERR!     at Request._callback (/usr/share/npm/lib/utils/npm-registry-client/request.js:136:18)
+ERR!     at Request.callback (/usr/lib/nodejs/request/main.js:119:22)
+ERR!     at Request.<anonymous> (/usr/lib/nodejs/request/main.js:212:58)
+ERR!     at Request.emit (events.js:88:20)
+ERR!     at ClientRequest.<anonymous> (/usr/lib/nodejs/request/main.js:209:10)
+ERR!     at ClientRequest.emit (events.js:67:17)
+ERR!     at CleartextStream.<anonymous> (http.js:1137:11)
+ERR!     at CleartextStream.emit (events.js:67:17)
+ERR! You may report this log at:
+ERR!     <http://bugs.debian.org/npm>
+ERR! or use
+ERR!     reportbug --attach /home/ram/projects/mario/lib/async/lib/npm-debug.log npm
+ERR! 
+ERR! System Linux 3.2.0-57-generic-pae
+ERR! command "node" "/usr/bin/npm" "install" "-g" "ios-simnpm" "install" "-g" "ios-simnpm" "install" "-g" "ios-simnpm"
+ERR! cwd /home/ram/projects/mario/lib/async/lib
+ERR! node -v v0.6.12
+ERR! npm -v 1.1.4
+ERR! message failed to fetch from registry: ios-simnpm
+verbose exit [ 1, true ]

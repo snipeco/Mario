@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="../lib/blocky/blockly_compressed.js"></script>
+		<script type="text/javascript" src="../lib/blocky/blocks_compressed.js"></script>
+		<script type="text/javascript" src="../lib/blocky/javascript_compressed.js"></script>
+		<script type="text/javascript" src="../lib/blocky/msg/js/en.js"></script>
+		<script type="text/javascript" src="../lib/async/lib/async.js"></script>
+		<script type="text/javascript" src="../marioLib/codeGenerator.js"></script>
+		<script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css " type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-responsive.min.css" type="text/css" media="screen" charset="utf-8">
+		<script type="text/javascript" src="../lib/bootbox.min.js"></script>
+		<script type="text/javascript" src="blocks.js"></script>
+		<script type="text/javascript" src="sonCommAPI.js"></script>
+		<link rel="stylesheet" href="../css/marioWorkSpace.css" type="text/css" media="screen" charset="utf-8">
+		<script>
+			function init() {
+				Blockly.inject(document.body,
+				{path: '../../', toolbox: document.getElementById('toolbox')});
+				// Let the top-level application know that Blockly is ready.
+				//        window.parent.blocklyLoaded(Blockly);
+				var xmlText='<xml><block type="program"></block></next></block></xml>';
+				var xml = Blockly.Xml.textToDom(xmlText);
+				Blockly.Xml.domToWorkspace(Blockly.mainWorkspace,xml);
+			}
+		</script>
+	</head>
+	<body id="workSpaceDiv" onload="init()">
+		<xml id="toolbox" style="display: none">
+
+		<category name="Control">
+		<block type="delay"></block>
+		<block type="prepare"></block>
+		<block type="program"></block>
+		<block type="date_event"></block>
+		<block type="if_mario"></block>
+		<block type="if_else"></block>
+		<block type="loop"></block>
+		<block type="while_loop"></block>
+		</category>
+
+
+
+
+		<category name="Variables" custom="VARIABLE"></category>
+
+		<category name="Constants">
+		<block type="math_number"></blocks>
+		</category>
+
+		<category name="Logic">
+		<block type="logic_compare"></block>
+		<block type="logic_operation"></block>
+		<block type="logic_boolean"></block>
+
+		</category>
+		<category name="Math">
+		<block type="math_single"></block>
+		<block type="math_arithmetic"></block>
+		<block type="math_change"></block>
+		<block type="math_number_property"></block>
+		<block type="math_trig"></block>
+		</category>
+
+		<category name="Input">
+
+		<category name="Sensors">
+
+		<block type="IO_temprature"></block>
+		<block type="IO_voltmeter"></block>
+		<block type="IO_resistor"></block>
+		<block type="IO_light"></block>
+		<block type="IO_magnetic"></block>
+		<block type="IO_humidity"></block>
+		<block type="IO_distance"></block>
+		<block type="IO_motion"></block>
+		<block type="IO_sound"></block>
+		<block type="IO_ir"></block>
+		</category>
+		<category name="Events">
+		<block type="switch0_down"></block>
+		<block type="switch0_up"></block>
+		<block type="switch1_down"></block>
+		<block type="switch1_up"></block>
+		<block type="switch2_down"></block>
+		<block type="switch2_up"></block>
+		<block type="switch3_down"></block>
+		<block type="switch3_up"></block>
+		<block type="switch4_down"></block>
+		<block type="switch4_up"></block>
+		<!--	<block type="console_log"></block> -->
+		</category>
+		</category>
+
+		<category name="Output">
+
+		<category name="External">
+		<block type="O_buzzer"></block>
+		<block type="O_pwm"></block>
+		<block type="O_vib"></block>
+		<block type="send_data_serial"></block>
+		<block type="led"></block>
+		<block type="IO_one"></block>
+		</category>
+		<category name="Internal">
+		<block type="console_log"></block>
+		<block type="take_photo"></block>
+		<block type="speak"></block>
+		</category>
+		</category>
+
+
+
+
+		<category name="Views">
+		<block type="voltmeter"></block>
+		<block type="temprature"></block>
+		<block type="mario_view"></block>
+		<block type="camera_view"></block>
+		<block type="line_chart"></block>
+		<block type="line_chart_xy"></block>
+		</category>
+
+		<category name="Games">
+		<block type="snakeGame"></block>
+		<block type="marioPiano"></block>
+		</category>
+
+		<category name="Plugins">
+
+		<category name="slider">
+		<block type="slider_init"></block>
+		<block type="slider_content"></block>
+		</category>
+
+		</category>
+
+		<category name="Robot">
+		<block type="rForward"></block>
+		<block type="rBackward"></block>
+		<block type="rLeft"></block>
+		<block type="rRight"></block>
+		<block type="rHookUp"></block>
+		<block type="rHookDown"></block>
+		<block type="robotArrows"></block>
+		</category>
+
+		</xml>
+	</body>
+</html>

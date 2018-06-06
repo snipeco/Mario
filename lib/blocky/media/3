@@ -1,0 +1,213 @@
+//here where you define custome blocks 
+father={};
+
+
+
+Blockly.Blocks['console_log'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(103);
+    this.appendDummyInput()
+        .appendTitle("Print on Console");
+    this.appendValueInput("data");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript['console_log'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'console.log('+value_data+')';
+  return code;
+};
+
+Blockly.Blocks['buzzer'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(359);
+    this.appendDummyInput()
+        .appendTitle("Buzzer!!!");
+    this.appendValueInput("NAME");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
+  };
+Blockly.JavaScript['buzzer'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+	var code = "sendFatherData({'type': 'buzz','value':"+value_name+"}) ";
+  return code;
+};
+
+Blockly.Blocks['elec_voltmeter'] = {
+
+	init: function() {
+		var mainDiv=document.createElement('div');
+		this.setHelpUrl('http://www.example.com/');
+			this.setColour(120);
+			this.appendDummyInput()
+			.appendTitle("ConsoleLog");
+			this.appendValueInput("NAME")
+			.setCheck("String")
+			.appendTitle("value");
+			this.setInputsInline(true);
+
+
+			this.setTooltip('This will display the voltmeter value');
+
+	},
+	mutationToDom: function() {
+		// Save whether the 'sides' title should be plural or singular.
+		var container = document.createElement('mutation');
+		var child=document.createElement('div');
+		child.innerHTML="helooo";
+		container.appendChild(child);
+		return container;
+	},
+	domToMutation: function(xmlElement) {
+	}
+
+
+};
+Blockly.JavaScript['elec_voltmeter'] = function(block) {
+	var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+	// TODO: Assemble ' + language + ' into code variable.
+	var data={type:'volt',value:'34'};
+	var code = "sendFatherData({'type': 'volt','value':'3000'}) ";
+	return code;
+};
+
+
+Blockly.Blocks['voltmeter'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(122);
+    this.appendDummyInput()
+        .appendTitle("Voltmeter")
+        .appendTitle(new Blockly.FieldImage("https://cdn2.iconfinder.com/data/icons/cosmo-appliance/40/metal_detector_multimeter_voltmeter-128.png", 30, 30));
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
+  };
+
+Blockly.JavaScript['voltmeter'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+	var data={type:'volt',value:'34'};
+	var code = "sendFatherData({'type': 'volt','value':'3000'}) ";
+  return code;
+};
+
+
+
+Blockly.Blocks['temprature'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(352);
+    this.appendDummyInput()
+        .appendTitle("Temprature")
+        .appendTitle(new Blockly.FieldImage("https://cdn3.iconfinder.com/data/icons/weather-icons-1/64/Temperature-128.png", 30, 30));
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
+  };
+
+Blockly.JavaScript['temprature'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+	var code = "sendFatherData({'type': 'temp','value':'3000'})";
+  return code;
+};
+Blockly.Blocks['resistor'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(150);
+    this.appendDummyInput()
+        .appendTitle("Resistor")
+        .appendTitle(new Blockly.FieldImage("http://2.bp.blogspot.com/-QYmxW54tUXA/USRb69IpqrI/AAAAAAAAALo/MsAvaac2fis/s200/simbol+resistor.png", 30, 30));
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript['resistor'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  return code;
+};
+
+
+Blockly.Blocks['sensor_read'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(128);
+    this.appendDummyInput()
+        .appendTitle("Sensor Read");
+    this.appendStatementInput("NAME")
+        .appendTitle(new Blockly.FieldDropdown([["Temprature", "temp"], ["Voltmeter", "volt"], ["Resistor", "res"]]), "NAME");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript['sensor_read'] = function(block) {
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var dropdown_name = block.getTitleValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  
+var str = [""
+    ,"window.addEventListener('message',function(obj){var sensorValue=obj.data.value;"+statements_name+"});"
+    ,"sendFatherData({'type': 'getTmp','value':'000'});"
+].join("");
+
+var code=str;
+  //var code = 'window.addEventListener("message",function(obj){console.log(obj.data.value)});sendFatherData({"type": "getTmp","value":"000"})';
+  return code;
+};
+
+
+Blockly.Blocks['sensorvalue'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(103);
+    this.appendDummyInput()
+        .appendTitle("SensorValue");
+    this.setInputsInline(true);
+    this.setOutput(true);
+    this.setTooltip('');
+  }
+};
+
+Blockly.JavaScript['sensorvalue'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'sensorValue';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+/*window.addEventListener('message', fatherMessageHanlder);
+
+var fatherMessageHanlder = function(e) {
+console.log('tesfasdfsadfsadfasdft');
+//parseFatherData();
+
+//var code = Blockly.JavaScript.workspaceToCode();
+//	console.log(code)
+//	eval(code);
+
+//sendFatherData("tmp");
+
+};
+
+
+*/

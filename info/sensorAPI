@@ -1,0 +1,57 @@
+5= temp
+6=volta
+7=capacitor
+8=buzzer
+9 =resistor
+10= PWM
+11= frequency
+12= sound
+13=light
+16=motion enable
+17=motion disable
+
+
+18 forward
+19 backward
+20 right
+21 left
+22 up the hock
+23 down the hock
+
+
+24: magnetic
+25:humedity
+26:distance
+27:vibration
+28:milliseconds vibration
+29:forward
+30:backward
+31:right
+32:left
+33:stop
+
+
+Method : 10, PWM Duty :0 , freq: noteFreq
+34:play piano
+35:stop piano
+
+
+
+0:)   %
+1:!   ^
+2:@   &
+3:#   *
+4:$   (
+
+
+
+
+Rx=(5*R2/((volta*5)/1023)))-R2
+R2=10k ohm
+volta = number from pic
+
+
+
+button : 100
+led on : 14
+led off : 15
